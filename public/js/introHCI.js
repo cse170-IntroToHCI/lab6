@@ -32,11 +32,9 @@ function addProjectDetails(e) {
 	var url = "/project/"+idNumber;
 	console.log("Going to URL : " + url);
 	$.get(url, function(result){
-		var projectHTML = '<a href="#" class="">' 					+
-		'<img src="' + result['image'] + '" class="detailsImage">' 	+
-		'<p>' + result['title'] + '</p>'							+
-		'<p><small>' + result['date'] + '</small></p></a>'			+
-		'<p>' + result['summary'] + '</p>';
+		var projectHTML = '<img src="' + result['image'] + '" class="detailsImage">' 	+
+						  '<h4><strong>' + result['date'] + '</strong></h4>'			+
+						  '<p>' + result['summary'] + '</p>';
 		$("#" + projectID + " div.thumbnail div.details").html(projectHTML);
 	});
 }
